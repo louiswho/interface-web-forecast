@@ -1,12 +1,16 @@
 # STAGE - BUILD
 FROM node:carbon as build
 ARG ANGULAR_CLI=6.0.7
-WORKDIR /docker
-COPY . .
-RUN npm install
-RUN npm run build
 RUN npm install -g @angular/cli@${ANGULAR_CLI}
 ENTRYPOINT [ "ng" ]
+WORKDIR /docker/projects/revaturecloud/forecast
+COPY projects/revaturecloud/forecast/package*.json ./
+RUN npm install
+WORKDIR /docker
+COPY package*.json ./
+RUN npm install
+COPY . ./
+RUN npm run build
 
 # STAGE - DEPLOY
 FROM nginx:1.14 as deploy
