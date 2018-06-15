@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div class="card-header">
+    Radar Chart
+  </div>
+  <div class="card-body">
+    <canvas baseChart
+            height="150px"
+            [datasets]="this.radarChartData"
+            [labels]="this.radarChartLabels"
+            [chartType]="this.radarChartType">
+    </canvas>
+  </div>
+</div>
