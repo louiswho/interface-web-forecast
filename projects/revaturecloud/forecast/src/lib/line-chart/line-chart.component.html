@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div class="card-header">
+    Line Chart
+  </div>
+  <div class="card-body">
+    <canvas baseChart
+            height="130"
+            [datasets]="this.lineChartData"
+            [labels]="this.lineChartLabels"
+            [chartType]="this.lineChartType">
+    </canvas>
+  </div>
+</div>

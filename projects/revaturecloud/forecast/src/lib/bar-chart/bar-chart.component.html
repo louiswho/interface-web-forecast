@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div class="card-header">
+    Rooms vs. Users Data
+  </div>
+  <div class="card-body">
+    <canvas baseChart
+            [datasets]="this.barChartData"
+            [labels]="this.barChartLabels"
+            [options]="this.barChartOptions"
+            [chartType]="this.barChartType">
+    </canvas>
+  </div>
+</div>
